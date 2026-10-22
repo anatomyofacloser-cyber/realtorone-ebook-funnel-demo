@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RealtorOne · Ebook Funnel Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--ink:#2b2a28;--mute:#7b766e;--gold:#b08d57;--gold2:#cfae78;--sage:#8aa399;--line:#e8e2d8;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#faf7f2,#eef2ef);font-family:Inter,sans-serif;color:var(--ink);min-height:100vh}
+.wrap{max-width:480px;margin:0 auto;padding:22px 18px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700;margin-bottom:16px}
+.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:9px;background:var(--line)}.dots i.on{background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1.1;margin:6px 0 8px;font-weight:700}
+h2{font-family:'Cormorant Garamond',serif;font-size:23px;margin:0 0 6px}
+p{line-height:1.5}.mute{color:var(--mute);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 8px 24px rgba(120,100,70,.07)}
+.btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;margin-top:12px;font-family:inherit}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold2))}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.post .hd{display:flex;gap:10px;align-items:center}.av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--sage));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.post .nm{font-weight:600;font-size:14px}.post .tm{font-size:12px;color:var(--mute)}
+.qbox{border-left:3px solid var(--gold);background:#faf6ef;padding:12px 14px;border-radius:0 12px 12px 0;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.35;margin:12px 0}
+.src{font-size:12px;color:var(--mute)}.link{color:#3c7a8a;font-weight:600;cursor:pointer;text-decoration:underline}
+.react{display:flex;gap:16px;font-size:13px;color:var(--mute);margin-top:12px;border-top:1px solid var(--line);padding-top:10px;flex-wrap:wrap}
+.pagewrap{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.pagewrap img{width:100%;display:block}
+.blur{position:absolute;left:0;right:0;bottom:0;top:42%;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(250,246,239,.92) 40%);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:18px;text-align:center}
+.blur b{font-family:'Cormorant Garamond',serif;font-size:22px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:999px;background:#eef3f1;color:#4f6f64}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fffdf9}
+.err{color:#b4533d;font-size:12px;min-height:14px}
+.lab{display:flex;gap:14px;align-items:center}.date{min-width:62px;text-align:center;background:#faf6ef;border-radius:14px;padding:8px;border:1px solid var(--line)}.date b{display:block;font-size:24px;font-family:'Cormorant Garamond',serif}.date span{font-size:11px;color:var(--gold);font-weight:700}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}.plan{border:1.5px solid var(--line);border-radius:18px;padding:14px;background:#fff;cursor:pointer;position:relative}
+.plan.sel{border-color:var(--gold);box-shadow:0 0 0 3px rgba(176,141,87,.15)}.plan .pr{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin:6px 0 2px}
+.badge{position:absolute;top:-10px;left:12px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:999px;letter-spacing:.05em}
+.save{color:#4f6f64;font-size:12px;font-weight:600}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.tab{border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12.5px;cursor:pointer;background:#fffdf9}.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+ul.b{padding-left:18px;margin:6px 0}ul.b li{margin:5px 0;font-size:14px}
+.ok{width:62px;height:62px;border-radius:50%;background:#eef3f1;color:#4f6f64;font-size:30px;display:flex;align-items:center;justify-content:center;margin:6px auto 8px}
+.c{text-align:center}.side{display:grid;grid-template-columns:1fr;gap:10px}
+.note{font-size:11px;color:var(--mute);text-align:center;margin-top:10px}
+.nav{display:flex;gap:8px;letter-spacing:0}.nb{font-size:12px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;cursor:pointer;font-weight:600}.prog{margin:-4px 0 16px}.pl{font-size:12px;font-weight:600;color:var(--mute);margin-bottom:6px}.pb{height:4px;background:var(--line);border-radius:9px;overflow:hidden}.pb i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}.opt{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.06em}.back{display:none!important;font-size:13px;color:var(--mute);cursor:pointer;margin-bottom:6px;display:inline-block}
+</style></head><body><div class="wrap" id="app"></div>
+<script>
+const P=new URLSearchParams(location.search);const DEMO=(P.get('demo')||'c');let S=+(P.get('s')||1);let plan='q';let tab='lab';let user={name:''};let PATH=P.get('path')||(DEMO=='b'?'b':'a');
+const QUOTE="When a buyer leaves a viewing with more data than direction, their brain defaults to 'I need to think about it.'";
+const FREE="You showed them square footage, payment plan breakdowns, handover dates, ROI projections, and community facilities. But you never helped them simplify. Overloaded buyers postpone decisions. And postponed decisions become ghosting.";
+const SRC="The Ghost Protocol · Page 8";
+const LAB=`<div class="card lab"><div class="date"><span>THU</span><b>29</b><span>OCT</span></div><div><span class="tag">UPCOMING LIVE LAB</span><div style="font-weight:600;margin-top:6px">Live Lab #07 · Weekly session with Mr Aanant Bisht</div><div class="mute">Thursday · live on Zoom · replay included</div></div></div>`;
+const steps={a:4,b:5,c:5};
+const BEN={lab:["Weekly Thursday Live Lab with Mr Aanant","Full replay library of past Labs","Q&A on your live deals"],ebooks:["All 12 RealtorOne ebooks","Ebook Finder: type a pain, get the page","New ebooks as they launch"],courses:["Cold Calling Mastery","Invisible Influence","Million Dirham Beliefs"],daily:["Daily Affirmation","Daily Visualization","Calm 5-minute morning routine"],crm:["RealtorOne CRM","Track leads, calls and follow-ups","Weekly pipeline view"]};
+const TN={lab:"Live Lab",ebooks:"Ebooks",courses:"Courses",daily:"Daily mind",crm:"CRM"};
+function go(n){S=n;render();window.scrollTo(0,0)}
+function head(){const N={1:'Community post',2:'Ebook page',3:'Choose your option',4:PATH=='a'?'Register free':'Checkout',5:PATH=='a'?'Confirmed':'Welcome'};return `<div class="top"><span>REALTOR ONE</span><span class="nav">${S>1?'<span class="nb" onclick="go('+(S-1)+')">← Back</span>':''}${S>1?'<span class="nb" onclick="restart()">↺ Restart</span>':''}</span></div><div class="prog"><div class="pl">Step ${S} of 5: ${N[S]}</div><div class="pb"><i style="width:${S*20}%"></i></div></div>`}
+function restart(){PATH=DEMO=='b'?'b':'a';user={name:''};go(1)}
+function s1(){return `<div class="mute" style="font-size:12px;margin-bottom:4px">RealtorOne Community · WhatsApp</div><div class="card post"><div class="hd"><div class="av">R1</div><div><div class="nm">RealtorOne</div><div class="tm">Today · 9:30 AM</div></div></div>
+<p style="margin:12px 0 0">Your buyer loved the viewing… then went silent? 👀 Here's why it happens:</p><div class="qbox">“${QUOTE}”</div><div class="src">${SRC}</div>
+<p style="margin:10px 0 0">The fix is on the same page 👇<br><span class="link" onclick="go(2)">🔗 See the solution</span></p><div class="react"><span>❤️ 128</span><span>💬 34 comments</span><span>↗ 52 shares</span></div></div>`}
+function s2(){return `<span class="back" onclick="go(1)">← Back</span><span class="tag">FROM THE EBOOK</span><h1>Why Dubai buyers disappear after viewing</h1><p class="mute">${SRC} · Reason 01: Information overload</p>
+<div class="card"><div class="qbox" style="margin-top:0">“${QUOTE} ${FREE}”</div><p class="mute" style="margin:0">That's reason 1 of 8. The other 7 and the V.I.E.W. framework to stop it are in the full ebook.</p></div>
+<div class="pagewrap"><img src="pages/ghost-8.jpg" alt="Ghost Protocol page 8"><div class="blur"><b>Want the full step-by-step?</b><div class="mute">7 more reasons + the exact fix for each</div><button class="btn gold" onclick="go(3)">Unlock the full page</button></div></div>`}
+function offerA(){return `<div class="card"><div class="opt">OPTION 1</div><span class="tag">FREE · FIRST LIVE LAB</span><h2 style="margin-top:8px">Option 1: Free first Live Lab</h2><p class="mute">Register and get The Ghost Protocol ebook free, plus your seat in the Lab.</p><button class="btn gold" onclick="PATH='a';go(4)">Choose Option 1: Register free</button></div>`}
+function plansHTML(){return `<div class="plans"><div class="plan ${plan=='m'?'sel':''}" onclick="plan='m';render()"><div class="mute" style="font-size:12px">Monthly</div><div class="pr">AED 392.80</div><div class="mute" style="font-size:12px">per month</div></div>
+<div class="plan ${plan=='q'?'sel':''}" onclick="plan='q';render()"><span class="badge">MOST POPULAR</span><div class="mute" style="font-size:12px">3 months</div><div class="pr">AED 995.80</div><div class="save">Save AED 182.60</div></div></div>`}
+function benHTML(){return `<div class="tabs">${Object.keys(TN).map(k=>`<span class="tab ${k==tab?'on':''}" onclick="tab='${k}';render()">${TN[k]}</span>`).join('')}</div><ul class="b">${BEN[tab].map(x=>`<li>${x}</li>`).join('')}</ul>`}
+function offerB(){return `<div class="card"><div class="opt">OPTION 2</div><span class="tag">FULL MEMBERSHIP</span><h2 style="margin-top:8px">Option 2: Full membership</h2>${plansHTML()}${benHTML()}<button class="btn" onclick="PATH='b';go(4)">Continue with ${plan=='q'?'3 months':'monthly'}</button></div>`}
+function s3(){const t=`<span class="back" onclick="go(2)">← Back</span><h1>Get the full solution</h1>`;
+ if(DEMO=='a')return t+offerA()+LAB; if(DEMO=='b')return t+offerB();
+ return t+`<p class="mute">Two ways to get the full solution. Pick one.</p><div class="side">${offerA()}${offerB()}</div>`}
+function reg(){const n=v('nm'),e=v('em');let ok=true;document.getElementById('e1').textContent=n?'':'Please add your name';document.getElementById('e2').textContent=/^\S+@\S+\.\S+$/.test(e)?'':'Please add a valid email';if(!n||!/^\S+@\S+\.\S+$/.test(e))return;user.name=n;go(5)}
+const v=id=>document.getElementById(id).value.trim();
+function formA(){return `<span class="back" onclick="go(3)">← Back</span><h1>Save your free seat</h1>${LAB}<div class="card"><label>Full name *</label><input id="nm" placeholder="Your name"><div class="err" id="e1"></div><label>Email *</label><input id="em" type="email" placeholder="you@email.com"><div class="err" id="e2"></div><label>WhatsApp (optional)</label><input id="wa" placeholder="+971 5X XXX XXXX"><button class="btn gold" onclick="reg()">Register free</button><div class="note">We'll send the ebook and the Lab link to your email.</div></div>`}
+function doneA(){return `<div class="c"><div class="ok">✓</div><h1>You're in${user.name?', '+user.name.split(' ')[0]:''}!</h1><p class="mute">You get this ebook free + a seat in the Lab.</p></div><div class="card lab"><div class="date" style="font-size:22px">📘</div><div><div style="font-weight:600">The Ghost Protocol</div><div class="mute">Sent to your email now</div></div></div>${LAB}<button class="btn ghost" onclick="go(1)">Back to start</button>`}
+function pay(){const ok=['cn','ce','cc','ch'].every(i=>v(i));document.getElementById('e3').textContent=ok?'':'Fill all fields (demo: any values)';if(ok)go(5)}
+function checkout(){const amt=plan=='q'?'AED 995.80 · 3 months':'AED 392.80 · monthly';return `<span class="back" onclick="go(3)">← Back</span><h1>Checkout</h1><div class="card"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px"><b>Live Lab membership</b><b>${amt}</b></div><div class="mute" style="font-size:13px">${plan=='q'?'Most popular · you save AED 182.60':'Cancel anytime'}</div></div>
+<div class="card"><label>Name on card</label><input id="ch" placeholder="Name"><label>Card number</label><input id="cn" placeholder="4242 4242 4242 4242"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>Expiry</label><input id="ce" placeholder="MM/YY"></div><div><label>CVC</label><input id="cc" placeholder="123"></div></div><div class="err" id="e3"></div><button class="btn gold" onclick="pay()">Pay ${plan=='q'?'AED 995.80':'AED 392.80'}</button><div class="note">Demo only: no payment is taken and nothing is stored.</div></div>`}
+function welcome(){return `<div class="c"><div class="ok">✓</div><h1>Welcome to the Live Lab</h1><p class="mute">Your membership is active. The full page is unlocked.</p></div><div class="pagewrap"><img src="pages/ghost-8.jpg" alt="Ghost Protocol page 8, unlocked"></div><div class="card"><b>Unlocked for you</b><ul class="b"><li>All 12 ebooks + Ebook Finder</li><li>This Thursday's Live Lab + replays</li><li>Cold Calling Mastery, Invisible Influence, Million Dirham Beliefs</li><li>Daily Affirmation & Visualization · CRM</li></ul></div>${LAB}<button class="btn ghost" onclick="go(1)">Back to start</button>`}
+function render(){let h;
+ if(S==1)h=s1();else if(S==2)h=s2();else if(S==3)h=s3();
+ else if(PATH=='a')h=S==4?formA():doneA();else h=S==4?checkout():welcome();
+ document.getElementById('app').innerHTML=head()+h}
+render();
+</script></body></html>
